@@ -297,9 +297,7 @@ class Transform {
      * @returns {number} pixel coordinate
      */
     latY(lat: number) {
-        if (lat > this.maxValidLatitude || lat < this.maxValidLatitude * -1) {
-            lat = clamp(lat, this.maxValidLatitude * -1, this.maxValidLatitude);
-        }
+        lat = clamp(lat, this.maxValidLatitude * -1, this.maxValidLatitude);
         const y = 180 / Math.PI * Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360));
         return (180 - y) * this.worldSize / 360;
     }
