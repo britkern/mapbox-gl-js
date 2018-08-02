@@ -43,4 +43,6 @@ const paint: Properties<PaintProps> = new Properties({
     "circle-stroke-opacity": new DataDrivenProperty(styleSpec["paint_circle"]["circle-stroke-opacity"]),
 });
 
-export default { paint };
+export default ({ paint }: {
+  paint: Properties<PaintProps>
+});
