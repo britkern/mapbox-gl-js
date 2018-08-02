@@ -286,10 +286,11 @@ class Transform {
     get point(): Point { return new Point(this.x, this.y); }
 
     /**
-     * latitude to absolute x coord
+     * longitude to absolute x coord
      * @returns {number} pixel coordinate
      */
     lngX(lng: number) {
+        lng = ((lng + 180) % 360 + 360) % 360 - 180;
         return (180 + lng) * this.worldSize / 360;
     }
     /**
